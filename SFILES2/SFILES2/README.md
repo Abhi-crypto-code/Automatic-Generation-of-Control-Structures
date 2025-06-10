@@ -1,41 +1,53 @@
-# SFILES 2.0 
-This repository is published together with the paper: *SFILES 2.0: An extended text-based flowsheet representation*<br>
-The repository contains functionality for the conversion between PFD-graphs/P&ID-graphs and SFILES 2.0 strings. In the paper, we describe the structure of the graphs, notation rules of the SFILES 2.0, and the conversion algorithm.  
+# PFDtoP&ID - Automated Control Structure Generation
 
-## Installation
+This repository focuses on extending the SFILES2 framework for automating the generation of control structures (P&IDs) from process flow diagrams (PFDs).
 
-To install the SFILES 2.0 package via `pip`, simply run:
+## Objective
 
-```sh
-pip install SFILES2
-```
+To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping & Instrumentation Diagrams (P&IDs) by:
+- Understanding the SFILES framework and its notation.
+- Improving graph visualization and layout.
+- Analyzing simulation software formats like DWSIM for usable data.
+- Evaluating LLM and ML-based approaches for graph extraction.
 
-## Exploring the Repository and Demonstrations
+## Weekly Progress Summary
 
-For users who want to explore the functionality with the provided demonstrations and example files:
-```sh
-git clone https://github.com/process-intelligence-research/SFILES2.git
-```
-After creating and activating a new virtual environment (python 3.9), you can use the pyproject.toml file to install all required packages:
-```sh
-pip install .
-```
-### Demonstration of functionality
-You can either have a look at the `demonstration.ipynb` which demonstrates SFILES 2.0 strings for a variety of PFDs and P&IDs or run the python file `run_demonstration.py`.
+### Understanding the Research
+- Read the main paper on SFILES and its application in control structure generation.
+- Studied the notation and representation of flowsheets using the SFILES language.
 
-## References
+### Codebase and Graph Generation
+- Explored the SFILES2 codebase and its graph generation pipeline.
+- Worked with `networkx` to enhance graph readability:
+  - Compared different layouts (planar, spring).
+  - Dynamically scaled node size, font size, arrow width, and opacity based on the number of nodes.
 
-If you use this package or find it helpful in your research, please consider citing:
+### File Format Investigation
+- Analyzed DWSIM's file structure:
+  - XML and compressed XML store data as nested dictionaries.
+  - Investigated `.pfdx` format as a potential source for graph representation.
 
-```text
-@article{vogel2023sfiles,
-  title={SFILES 2.0: an extended text-based flowsheet representation},
-  author={Vogel, Gabriel and Hirtreiter, Edwin and Schulze Balhorn, Lukas and Schweidtmann, Artur M},
-  journal={Optimization and Engineering},
-  volume={24},
-  number={4},
-  pages={2911--2933},
-  year={2023},
-  publisher={Springer}
-}
-```
+### ML and LLM-Based Approaches
+- Explored CNN-based image-to-graph conversion literature.
+- Evaluated some LLM-generated outputs against expected SFILES structures.
+
+## Tools and Libraries Used
+
+- Python
+- NetworkX
+- Matplotlib
+- DWSIM
+- SFILES2 framework
+
+## Directory Structure
+
+```bash
+.
+├── data/                     # Raw input and simulation files
+├── graphs/                   # Generated graph visualizations
+├── SFILES2/                  # Codebase related to SFILES implementation
+├── notebooks/                # Jupyter notebooks for experiments
+├── outputs/                  # LLM outputs and comparisons
+├── PFDtoP&ID.pdf             # Reference research material
+└── README.md                 # This file
+
