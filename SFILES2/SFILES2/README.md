@@ -1,4 +1,3 @@
-@@ -1,41 +1,53 @@
 # SFILES 2.0 
 This repository is published together with the paper: *SFILES 2.0: An extended text-based flowsheet representation*<br>
 The repository contains functionality for the conversion between PFD-graphs/P&ID-graphs and SFILES 2.0 strings. In the paper, we describe the structure of the graphs, notation rules of the SFILES 2.0, and the conversion algorithm.  
