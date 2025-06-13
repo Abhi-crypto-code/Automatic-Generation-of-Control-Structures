@@ -39,15 +39,3 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
 - DWSIM
 - SFILES2 framework
 
-## Directory Structure
-
-```bash
-.
-├── data/                     # Raw input and simulation files
-├── graphs/                   # Generated graph visualizations
-├── SFILES2/                  # Codebase related to SFILES implementation
-├── notebooks/                # Jupyter notebooks for experiments
-├── outputs/                  # LLM outputs and comparisons
-├── PFDtoP&ID.pdf             # Reference research material
-└── README.md                 # This file
-
