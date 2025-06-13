@@ -39,3 +39,29 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
 - DWSIM
 - SFILES2 framework
 
+
+# Week 2 Progress
+
+## 🚧 Focus Areas
+- Parsing DWSIM XML files and converting to graph structures
+- Deep understanding of SFILES2 notation and its physical interpretation
+- Graph visualization improvements (controller/transmitter styling)
+- Initial exploration of vision-based tools (Ollama, LLaVA) for image-to-graph ideas
+- Consultations with mentors and the original paper author
+
+---
+
+## 🔧 Technical Work
+- Implemented algorithm to convert DWSIM `.xml` files → `.graphml`
+- Successfully visualized flowsheet graphs using NetworkX
+- Solved GUID issue (e.g., `MAT-1579...`) by mapping to readable unit operation names
+- Enhanced graph visuals: color-coded controllers, scaled nodes/labels/arrows
+- Manually dry-ran and understood small SFILES2 examples
+
+---
+
+## ⏭️ Next Steps
+- Finalize end-to-end pipeline: XML → Graph → SFILES2
+- Automate SFILES2 generation from graphs
+- Validate outputs against real PFDs/P&IDs
+- Begin basic UI for visualization and model integration
