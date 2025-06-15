@@ -69,7 +69,7 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
 # Weekly Progress Summary - 2
 
 ## Work Done
-- Discussed direction of work with Priyam Sir and Prof. Arthur (research author).
+- Discussed direction of work.
 - Developed algorithm to convert `.xml` files to `.graphml` and successfully plotted the graph.
 - Implemented basic graph coloring for notation clarity.
 - Created algorithm to count unit operations, controllers, and indicators.
