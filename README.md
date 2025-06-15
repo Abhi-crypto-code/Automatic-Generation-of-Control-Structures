@@ -60,13 +60,13 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
 
 ---
 
-##Next Steps
+## Next Steps
 - Finalize end-to-end pipeline: XML → Graph → SFILES2
 - Automate SFILES2 generation from graphs
 - Validate outputs against real PFDs/P&IDs
 - Begin basic UI for visualization and model integration
 
-# Weekly Progress Summary -- 2
+# Weekly Progress Summary - 2
 
 ## Work Done
 - Discussed direction of work with Priyam Sir and Prof. Arthur (research author).
