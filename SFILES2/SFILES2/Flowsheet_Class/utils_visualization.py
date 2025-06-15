@@ -350,10 +350,40 @@ def plot_flowsheet_nx(graph, plot_with_stream_labels, add_positions=True):
         width_initial = 4
         width_div = 32
         width = width_initial + n//width_div
+        
+        labels = {}
+        for node in graph.nodes:
+            if isinstance(node, str) and '-' in node and len(node) > 20:
+                labels[node] = node.split('-')[0].lower()
+            else:
+                labels[node] = node  # Keep original if not matching GUID
 
-        nx.draw(graph, pos, with_labels=True, font_size = font_size,node_size= node_size,arrowsize = arrowsize,edgecolors='black' , alpha = 0.8,font_weight = 'bold',width = width, style='solid' ,node_color="#69d239")
+        controllers = 0
+        indicators = 0
+
+        color_map = []
+        for n in graph.nodes():
+        # controllers: pressure/flow/level indicators
+            if any(ctrl in n for ctrl in ["PC", "FC", "LC","TC","M"]):
+                color_map.append("#1f78b4")  
+                controllers+=1
+            # inidicators:
+            elif any(ctrl in n for ctrl in ["TI","PI"] ):
+                color_map.append("#33a02c")  
+                indicators+=1
+            # everything else:
+            else:
+                color_map.append("#b2df8a")
+        
+        n = graph.number_of_nodes()
+        unit_operations = n - controllers - indicators
+        nx.draw(graph, pos ,labels = labels,node_color=color_map, with_labels=True, font_size = font_size,node_size= node_size,arrowsize = arrowsize,edgecolors='black' , alpha = 0.8,font_weight = 'bold',width = width, style='solid',bbox=dict(facecolor="white", edgecolor="black", boxstyle="round,pad=0.4"))
 
 
+        # nx.draw(graph, pos ,labels = labels, with_labels=True, font_size = font_size,node_size= node_size,arrowsize = arrowsize,edgecolors='black' , alpha = 0.8,font_weight = 'bold',width = width, style='solid' ,node_color="#69d239")
+        
+        print(f"Number of unit operations = {unit_operations}")
+        print(f"Number of controllers = {controllers} and Number of indicators = {indicators}")
     plt.show()
     return fig
 

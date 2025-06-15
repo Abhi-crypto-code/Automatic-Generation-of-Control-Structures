@@ -32,7 +32,7 @@ If you use this package or find it helpful in your research, please consider cit
   title={SFILES 2.0: an extended text-based flowsheet representation},
   author={Vogel, Gabriel and Hirtreiter, Edwin and Schulze Balhorn, Lukas and Schweidtmann, Artur M},
   journal={Optimization and Engineering},
-  volume={24},Add commentMore actions
+  volume={24},
   number={4},
   pages={2911--2933},
   year={2023},
