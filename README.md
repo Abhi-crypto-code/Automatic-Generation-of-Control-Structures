@@ -60,8 +60,29 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
 
 ---
 
-## ⏭️ Next Steps
+##Next Steps
 - Finalize end-to-end pipeline: XML → Graph → SFILES2
 - Automate SFILES2 generation from graphs
 - Validate outputs against real PFDs/P&IDs
 - Begin basic UI for visualization and model integration
+
+# Weekly Progress Summary -- 2
+
+## Work Done
+- Discussed direction of work with Priyam Sir and Prof. Arthur (research author).
+- Developed algorithm to convert `.xml` files to `.graphml` and successfully plotted the graph.
+- Implemented basic graph coloring for notation clarity.
+- Created algorithm to count unit operations, controllers, and indicators.
+- Explored LLaMA Vision to interpret physical meaning from P&ID-like images.
+- Studied SFILES notation and underlying algorithm.
+- Looked into SMILES notation for future applicability.
+
+##  Issues Faced
+- GUID-based tags (e.g., `[MAT-xxxxx]`) lack readable unit names.
+  - Explored mapping solutions; C#/.NET API found impractical.
+  - Need a consistent GUID-to-name conversion method.
+- Failed attempt to compare overall graph structures via edge comparison.
+  - Controllers inserted between paths disrupt direct matching.
+  - Requires alternative structural comparison algorithm.
+- Struggled with physical interpretation of process/controllers in presentation.
+
