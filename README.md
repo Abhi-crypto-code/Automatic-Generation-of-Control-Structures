@@ -147,8 +147,7 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
     - **No Operating Conditions**: Does not store temperature, pressure, or composition (only topology).  
     - **No Spatial Layout**: Lacks diagram coordinates—must be handled separately.  
     - **Complex Multi-Port Units**: Difficult to represent columns with >2 inlets/outlets.  
-    - **Control Details Missing**: No info on controller type (field-mounted vs panel), alarms, or setpoints.  
-    - **Tool-Specific Extensions**: May lead to compatibility issues across vendors.
+    - **Control Details Missing**: No info on controller type (field-mounted vs panel), alarms, or setpoints.
     
     ---
     
