@@ -111,7 +111,6 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
   - **PC** – Pressure Controller  
   - **LC** – Level Controller  
   - **FC** – Flow Controller  
-  - **AC** – Analyzer (composition) Controller  
   - **TI/PI/LI/FI** – Temperature, Pressure, Level, Flow Indicators  
 
 - Explored Llama Vision to interpret physical meaning from P&ID-like images.
