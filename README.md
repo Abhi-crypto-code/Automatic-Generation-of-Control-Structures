@@ -125,5 +125,3 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
 - Failed attempt to compare overall graph structures via edge comparison.
   - Controllers inserted between paths disrupt direct matching.
   - Requires alternative structural comparison algorithm.
-- Struggled with physical interpretation of process/controllers in presentation.
-
