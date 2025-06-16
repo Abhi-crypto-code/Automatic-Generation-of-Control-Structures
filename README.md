@@ -116,6 +116,27 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
 
 - Explored Llama Vision to interpret physical meaning from P&ID-like images.
 - Studied SFILES notation and how graph is contructed from its notation and vise-versa.
+    ## SFILES 2.0: Notation, Improvements & Limits
+    
+    ### Notation Highlights
+    - **Branching**: `<&|…|` groups multiple inputs.  
+    - **Heat Exchangers**: Sub‑nodes with `{#}` tag multi‑stream paths.  
+    - **Separation Units**: `{tin}`, `{bin}`, `{tout}`, `{bout}` mark inlets/outlets.  
+    - **Control Loops**: `(C){TC}`, `(C){PC}`, etc., embed P&ID controllers.  
+    - **Standard Abbrevs**: Fixed unit codes (`hex`, `dist`, `r`, `pp`, `sep`).
+    
+    ### Key Improvements
+    1. **Unambiguous Topology**: Handles multi‑port units and stream direction.  
+    2. **Embedded Instrumentation**: Encodes control loops natively.  
+    3. **Richer Metadata**: Stream tags & grouping for complex equipment.  
+    4. **Extensible Syntax**: Easily add new unit types or tags.
+    
+    ### Main Limits
+    - **>2‑Port Units**: Still tricky with very complex columns/exchangers.  
+    - **No Conditions**: Doesn’t capture temps, pressures or flow rates.  
+    - **No Layout Info**: Lacks diagram coordinates—needs separate CAD.  
+    - **Vendor Variants**: Tool‑specific extensions can reduce compatibility.  
+
 - Looked into SMILES notation for future applicability.
 
 ##  Issues Faced
