@@ -44,11 +44,84 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
 # Weekly Progress Summary - 2
 
 ## Work Done
-- Discussed direction of work.
+- Discussed direction of work on DWSIM files.
 - Developed algorithm to convert `.xml` files to `.graphml` and successfully plotted the graph.
-- Implemented basic graph coloring for notation clarity.
-- Created algorithm to count unit operations, controllers, and indicators.
-- Explored LLaMA Vision to interpret physical meaning from P&ID-like images.
+- Implemented basic graph coloring for notation clarity by providing distinct colors to unit Operations ,Controllers,and Transmitters.
+- Created algorithm to count unit operations, controllers, and indicators in a graph.
+- Tried to understand physical meaning of position of controllers.
+  -## Instrumentation & Control Overview for P&ID Units
+
+  ### Distillation Column (`dist-1`)
+  **Control Loops:**
+  - **LC** – Level control (bottom product level)  
+    _Manipulated Variable:_ Bottom valve opening  
+  - **PC** – Pressure control (overhead)  
+    _Manipulated Variable:_ Condenser duty or vent valve  
+  - **TC** – Temperature control (column tray temp)  
+    _Manipulated Variable:_ Reboiler heat input  
+  - **FC** – Flow control (reflux or feed rate)  
+    _Manipulated Variable:_ Reflux valve / feed pump speed  
+  - **AC** – Composition control (distillate purity) *(optional)*  
+    _Manipulated Variable:_ Reflux ratio  
+  
+  **Indicators Only:**
+  - **LI**, **PI**, **TI**, **FI**
+  
+  ---
+  
+  ### Heat Exchanger (`hex-1`)
+  **Control Loops:**
+  - **TC** – Outlet temperature control  
+    _Manipulated Variable:_ Utility flow rate (steam or coolant)  
+  - **FC** – Utility flow control  
+    _Manipulated Variable:_ Utility inlet valve  
+  
+  **Indicators Only:**
+  - **TI** – Inlet/Outlet temperatures
+  
+  ---
+  
+  ### Reactor (`r-1`)
+  **Control Loops:**
+  - **TC** – Reactor temperature control  
+    _Manipulated Variable:_ Jacket coolant/heater flow  
+  - **PC** – Reactor pressure control  
+    _Manipulated Variable:_ Vent or purge valve  
+  - **LC** – Reactor level control  
+    _Manipulated Variable:_ Bottom draw-off valve  
+  - **SC** – Agitator speed control *(if agitated)*  
+    _Manipulated Variable:_ Agitator drive speed  
+  - **AC** – Product composition control *(optional)*  
+    _Manipulated Variable:_ Feed ratio or reactor temperature setpoint  
+  
+  **Indicators Only:**
+  - **TI**, **PI**, **LI**
+  
+  ---
+  
+  ### Pump (`pp-1`)
+  **Control Loops:**
+  - **FC** – Discharge flow control  
+    _Manipulated Variable:_ Pump speed (VFD) or control valve  
+  - **PC** – Discharge pressure control  
+    _Manipulated Variable:_ Discharge valve position  
+  
+  **Monitoring:**
+  - Motor status (ON/OFF)  
+  - **PI** on suction & discharge  
+  - Vibration sensor *(optional)*  
+  
+  ---
+  
+  ### Tag Key:
+  - **TC** – Temperature Controller  
+  - **PC** – Pressure Controller  
+  - **LC** – Level Controller  
+  - **FC** – Flow Controller  
+  - **AC** – Analyzer (composition) Controller  
+  - **TI/PI/LI/FI** – Temperature, Pressure, Level, Flow Indicators  
+
+- Explored Llama Vision to interpret physical meaning from P&ID-like images.
 - Studied SFILES notation and underlying algorithm.
 - Looked into SMILES notation for future applicability.
 
