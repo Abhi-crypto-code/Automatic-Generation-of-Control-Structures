@@ -49,7 +49,6 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
 - Implemented basic graph coloring for notation clarity by providing distinct colors to unit Operations ,Controllers,and Transmitters.
 - Created algorithm to count unit operations, controllers, and indicators in a graph.
 - Tried to understand physical meaning of position of controllers.
-  -## Instrumentation & Control Overview for P&ID Units
 
   ### Distillation Column (`dist-1`)
   **Control Loops:**
@@ -60,9 +59,7 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
   - **TC** – Temperature control (column tray temp)  
     _Manipulated Variable:_ Reboiler heat input  
   - **FC** – Flow control (reflux or feed rate)  
-    _Manipulated Variable:_ Reflux valve / feed pump speed  
-  - **AC** – Composition control (distillate purity) *(optional)*  
-    _Manipulated Variable:_ Reflux ratio  
+    _Manipulated Variable:_ Reflux valve / feed pump speed
   
   **Indicators Only:**
   - **LI**, **PI**, **TI**, **FI**
@@ -88,11 +85,7 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
   - **PC** – Reactor pressure control  
     _Manipulated Variable:_ Vent or purge valve  
   - **LC** – Reactor level control  
-    _Manipulated Variable:_ Bottom draw-off valve  
-  - **SC** – Agitator speed control *(if agitated)*  
-    _Manipulated Variable:_ Agitator drive speed  
-  - **AC** – Product composition control *(optional)*  
-    _Manipulated Variable:_ Feed ratio or reactor temperature setpoint  
+    _Manipulated Variable:_ Bottom draw-off valve 
   
   **Indicators Only:**
   - **TI**, **PI**, **LI**
@@ -122,7 +115,7 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
   - **TI/PI/LI/FI** – Temperature, Pressure, Level, Flow Indicators  
 
 - Explored Llama Vision to interpret physical meaning from P&ID-like images.
-- Studied SFILES notation and underlying algorithm.
+- Studied SFILES notation and how graph is contructed from its notation and vise-versa.
 - Looked into SMILES notation for future applicability.
 
 ##  Issues Faced
