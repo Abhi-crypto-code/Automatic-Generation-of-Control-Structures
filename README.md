@@ -116,26 +116,54 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
 
 - Explored Llama Vision to interpret physical meaning from P&ID-like images.
 - Studied SFILES notation and how graph is contructed from its notation and vise-versa.
-    ## SFILES 2.0: Notation, Improvements & Limits
+    ## SFILES 2.0: Summary of Notation, Improvements & Limitations
     
-    ### Notation Highlights
-    - **Branching**: `<&|…|` groups multiple inputs.  
-    - **Heat Exchangers**: Sub‑nodes with `{#}` tag multi‑stream paths.  
-    - **Separation Units**: `{tin}`, `{bin}`, `{tout}`, `{bout}` mark inlets/outlets.  
-    - **Control Loops**: `(C){TC}`, `(C){PC}`, etc., embed P&ID controllers.  
-    - **Standard Abbrevs**: Fixed unit codes (`hex`, `dist`, `r`, `pp`, `sep`).
+    ### Key Notation Rules
     
-    ### Key Improvements
-    1. **Unambiguous Topology**: Handles multi‑port units and stream direction.  
-    2. **Embedded Instrumentation**: Encodes control loops natively.  
-    3. **Richer Metadata**: Stream tags & grouping for complex equipment.  
-    4. **Extensible Syntax**: Easily add new unit types or tags.
+    - **Converging Branches**: Use `<&|...&|` instead of `<` to denote multiple inputs merging at a unit.  
+    - **Stream Tags**: `{tin}`, `{bin}`, `{tout}`, `{bout}` define top/bottom inlets and outlets for separation units.  
+    - **Multi-Stream Heat Exchangers**: Use `{#}` tags to group heat exchanger nodes belonging to the same unit.  
+    - **Independent Mass Trains**: Prefix `n|` to denote isolated subsystems (e.g., utility circuits).  
+    - **Control Loops**:
+      - Controllers are represented as nodes: `(C){TC}`, `(C){FC}`, etc.  
+      - Signal flow uses `_1` and `<_1` to distinguish from material flow.  
+    - **Recycle Streams**: Use `<#` and `#` to represent start and end of recycle loops.  
+    - **Branching**: Use square brackets `[(u)]` to denote multiple outputs from a unit.
     
-    ### Main Limits
-    - **>2‑Port Units**: Still tricky with very complex columns/exchangers.  
-    - **No Conditions**: Doesn’t capture temps, pressures or flow rates.  
-    - **No Layout Info**: Lacks diagram coordinates—needs separate CAD.  
-    - **Vendor Variants**: Tool‑specific extensions can reduce compatibility.  
+    ---
+    
+    ### Improvements Over Original SFILES
+    
+    - **Better Clarity in Merged Streams**: Replaces ambiguous `<` with `<&|...&|` for robust convergence notation.  
+    - **P&ID Integration**: Supports embedded representation of controllers and signal paths.  
+    - **Reversible Conversion**: Includes port-specific tags for separation units, enabling unambiguous reconstruction.  
+    - **Modular Heat Exchanger Modeling**: Adds ability to model cryogenic/multi-stream exchangers clearly.  
+    - **Extensible Grammar**: Can accommodate new unit types, control tags, and special cases.
+    
+    ---
+    
+    ### Known Limitations
+    
+    - **No Operating Conditions**: Does not store temperature, pressure, or composition (only topology).  
+    - **No Spatial Layout**: Lacks diagram coordinates—must be handled separately.  
+    - **Complex Multi-Port Units**: Difficult to represent columns with >2 inlets/outlets.  
+    - **Control Details Missing**: No info on controller type (field-mounted vs panel), alarms, or setpoints.  
+    - **Tool-Specific Extensions**: May lead to compatibility issues across vendors.
+    
+    ---
+    
+    ### Example Snippets
+    
+    - Converging stream:  
+      `(r)<&|(raw)(pp)&|(mix)`  
+    - Heat exchanger split stream:  
+      `(raw)(hex){1}(dist)...(hex){1}(prod)`  
+    - Level control:  
+      `(tank)[(C){LC}_1](v)<_1(prod)`
+    
+    ---
+
+
 
 - Looked into SMILES notation for future applicability.
 
