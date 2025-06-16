@@ -102,7 +102,7 @@ To explore and improve the workflow from Process Flow Diagrams (PFDs) to Piping 
   **Monitoring:**
   - Motor status (ON/OFF)  
   - **PI** on suction & discharge  
-  - Vibration sensor *(optional)*  
+ 
   
   ---
   
